@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Registration Form</title>
+    <link rel="stylesheet" href="/CSS/registration.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Multi-Step Form -->
+    <form id="multiStepForm" action="/PHP/register.php" method="POST">
+        <!-- Step 1: Account Setup -->
+        <div class="form-step active" id="step1">
+            <h2>Step 1: Account Setup</h2>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" maxlength="20" required>
+            <p id="usernameError" class="error-message"></p>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" maxlength="20" required>
+
+            <label for="confirm_pass">Confirm Password:</label>
+            <input type="password" name="confirm_pass" id="confirm_pass" maxlength="20" required>
+            <p id="passwordError" class="error-message"></p>
+
+            <button type="button" id="nextButton">Next</button>
+        </div>
+
+        <!-- Step 2: Personal Information -->
+        <div class="form-step" id="step2">
+            <h2>Step 2: Personal Information</h2>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name" required maxlength="11">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name" required maxlength="11">
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required maxlength="20">
+
+            <label for="address">Address:</label>
+            <textarea name="address" id="address" required maxlength="30"></textarea>
+
+            <label for="contact_no">Contact No:</label>
+            <textarea name="contact_no" id="contact_no" required maxlength="11" minlength="11"></textarea>
+
+            <button type="button" id="prevButton">Previous</button>
+            <button type="submit" id="submitButton">Register</button>
+        </div>
+    </form>
+
+    <script src="/JS/register.js"></script>
+</body>
+</html>
